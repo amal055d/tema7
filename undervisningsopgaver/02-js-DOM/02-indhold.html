@@ -30,7 +30,6 @@
             border: 1px solid black;
             padding: 10px 0;
         }
-
     </style>
 </head>
 
@@ -46,12 +45,12 @@
             <h2>Undertitel</h2>
             <article>
 
-                <img src="400_300_nature%20(1).jpg" alt="billede af natur">
+                <img src="https://placeimg.com/640/480/any">
                 <h3>Article 1</h3>
                 <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, ex unde labore sapiente tempore, ipsam! Possimus eveniet, deserunt cupiditate labore minima explicabo repellat iusto, sint quo dolorem recusandae ratione necessitatibus?</p>
             </article>
             <article>
-                <img src="400_300_nature.jpg" alt="billede af natur 2">
+                <img src="https://placeimg.com/640/480/any">
                 <h3>Article 2</h3>
                 <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, ex unde labore sapiente tempore, ipsam! Possimus eveniet, deserunt cupiditate labore minima explicabo repellat iusto, sint quo dolorem recusandae ratione necessitatibus?</p>
             </article>
@@ -69,6 +68,8 @@
         const overskrift = document.querySelector("h1")
         overskrift.textContent;
         console.log(overskrift.textContent);
+        overskrift.textContent = "Billeder";
+        console.log(overskrift.textContent);
 
         const paragraph = document.querySelector("p")
         paragraph.textContent;
@@ -77,15 +78,21 @@
         const image = document.querySelector("img")
         console.log(image);
 
-        const article1 = document.querySelector("#article1")
-        article1.textContent;
-        console.log(article1.textContent);
+        const artikel1 = document.querySelector("article:nth-child(1)");
+        overskrift.textContent;
+        console.log(overskrift.textContent);
+        overskrift.textContent = "Billeder";
+        console.log(overskrift.textContent);
+        artikel1.textContent = "Her er et billede af noget natur";
 
-        const article2 = document.querySelector("#article2")
-        article2.textContent;
-        console.log(article2.textContent);
+        const pic1 = document.querySelector("#first")
+        pic1.alt = "tekst til billede 1";
+        pic1.src = "https://placeimg.com/640/480/any";
+        console.log(pic1.textContent);
 
+        const pic2 = document.querySelector("#second")
+        pic2.alt = "tekst til billede 2";
+        pic2.src = "https://placeimg.640/640/480/any";
+        console.log(pic2.textContent);
     </script>
-</body>
-
-</html>
+</body></html>
