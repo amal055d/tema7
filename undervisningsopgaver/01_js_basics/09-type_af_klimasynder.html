@@ -18,16 +18,17 @@
 
     <script>
         var i = 3 * 109;
-        let resultat;
         console.log(`Ved 3 timers flyrejse har du udledt ${i} kg CO2`);
+        let resultat;
+
 
         if (i < 100) {
             resultat = "Tæt på Thunberg";
-        } else if (i < 100 && 200) {
+        } else if (i < 200) {
             resultat = "Ja ja, du behøver ikke melde dig ud af Å";
-        } else if (i < 200 && 600) {
+        } else if (i < 600) {
             resultat = "Det er godt for turismen i nordeuropa";
-        } else {
+        } else if (i > 600) {
             resultat = "Nå ja vi kan jo altid kolonisere en anden planet";
         }
 
