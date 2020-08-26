@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        h1,
+        footer {
+            text-align: center;
+        }
+
+        section {
+            display: flex;
+            flex-flow: column;
+        }
+
+        article {
+            border: 1px solid black;
+        }
+
+        header,
+        footer {
+            border: 1px solid black;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Titel</h1>
+    </header>
+    <main>
+
+
+        <section>
+            <h2>Undertitel</h2>
+            <article>
+
+                <img src="https://placeimg.com/640/480/nature">
+                <h3>Article 1</h3>
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, ex unde labore sapiente tempore, ipsam! Possimus eveniet, deserunt cupiditate labore minima explicabo repellat iusto, sint quo dolorem recusandae ratione necessitatibus?</p>
+            </article>
+            <article>
+                <img src="https://placeimg.com/640/480/arch">
+                <h3>Article 2</h3>
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, ex unde labore sapiente tempore, ipsam! Possimus eveniet, deserunt cupiditate labore minima explicabo repellat iusto, sint quo dolorem recusandae ratione necessitatibus?</p>
+            </article>
+
+
+        </section>
+    </main>
+
+    <footer>
+        This is the footer
+    </footer>
+
+
+    <script>
+        console.log("test");
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            console.log("alt er loaded");
+        }
+
+
+        const overskrift = document.querySelector("h1")
+        overskrift.textContent;
+        console.log(overskrift.textContent);
+        overskrift.textContent = "Billeder";
+        console.log(overskrift.textContent);
+
+        const paragraph = document.querySelector("p")
+        paragraph.textContent;
+        console.log(paragraph.textContent);
+
+        const image = document.querySelector("img")
+        console.log(image);
+
+        const artikel1 = document.querySelector("article:nth-child(1)");
+        overskrift.textContent;
+        console.log(overskrift.textContent);
+        overskrift.textContent = "Billeder";
+        console.log(overskrift.textContent);
+        artikel1.textContent = "Her er et billede af noget natur";
+
+        const pic1 = document.querySelector("#first")
+        pic1.alt = "tekst til billede 1";
+        pic1.src = "https://placeimg.com/640/480/nature";
+        console.log(pic1.textContent);
+
+        const pic2 = document.querySelector("#second")
+        pic2.alt = "tekst til billede 2";
+        pic2.src = "https://placeimg.com/640/480/arch";
+        console.log(pic2.textContent);
+    </script>
+</body></html>
