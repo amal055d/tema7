@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+    <p>Se hvad klokken er i konsollen</p>
+
+
+
+
+
+    <script>
+        var day = new Date();
+        var hr = day.getHours();
+        let resultat;
+
+        if (hr >= 5 && hr < 10) {
+            resultat = "Godmorgen"
+
+        } else if (hr == 10) {
+            resultat = "Goddag"
+
+        } else if (hr >= 10 && hr < 18) {
+            resultat = "Goddag"
+        } else if (hr >= 18 && hr < 24) {
+            resultat = "Godaften";
+        } else {
+            resultat = "Godnat";
+        }
+
+        console.log(resultat);
+
+    </script>
+</body>
+
+</html>
