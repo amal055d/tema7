@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+    <p>Hvad er længden på dine flyrejse i timer?</p>
+    <input type="text" id="længde">
+    <button>Klik og beregn CO</button>
+
+
+
+
+    <script>
+        document.querySelector("button").addEventListener("click", buttonCliked);
+
+        function buttonCliked() {
+
+
+            let c = 109;
+            var time = new Date().getHours();
+
+            function udslet {
+                return c * time;
+            }
+            let resultat = `Her er CO2-udledningen for længden af de timer du flyver ${resultat}`;
+            console.log(resultat);
+
+            if (time < 10) {
+                resultat = "Godmorgen";
+
+            } else if (time < 18) {
+                resultat = "Goddag";
+            } else if (time < 24) {
+                resultat = "Godaften";
+            } else if (time < 05) {
+                resultat = "Godnat";
+            }
+
+            function længden(l, c) {
+                return l * c;
+
+            }
+        }
+
+    </script>
+</body>
+
+</html>
