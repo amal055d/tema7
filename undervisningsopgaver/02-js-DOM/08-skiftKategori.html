@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        h1,
+        footer {
+            text-align: center;
+        }
+
+        section {
+            display: flex;
+            flex-flow: column;
+        }
+
+        article {
+            border: 1px solid black;
+        }
+
+        header,
+        footer {
+            border: 1px solid black;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Titel</h1>
+    </header>
+    <main>
+
+
+        <section>
+            <h2>Undertitel</h2>
+            <article>
+
+                <img src="https://placeimg.com/640/480/nature" id="first">
+                <h3>Article 1</h3>
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, ex unde labore sapiente tempore, ipsam! Possimus eveniet, deserunt cupiditate labore minima explicabo repellat iusto, sint quo dolorem recusandae ratione necessitatibus?</p>
+            </article>
+            <article>
+                <img src="https://placeimg.com/640/480/arch" alt="" id="second">
+                <h3>Article 2</h3>
+                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis, ex unde labore sapiente tempore, ipsam! Possimus eveniet, deserunt cupiditate labore minima explicabo repellat iusto, sint quo dolorem recusandae ratione necessitatibus?</p>
+            </article>
+
+
+        </section>
+    </main>
+
+    <footer>
+        This is the footer
+    </footer>
+
+
+    <script>
+        console.log("test");
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            console.log("alt er loaded");
+
+
+            first.addEventListener("click", changePic);
+
+            function changePic() {
+                const firstpic = document.querySelector("#first")
+                firstpic.src = "https://placeimg.com/400/300/arch?t=" + Math.round(Math.random() * 9) + 1;
+                firstpic.alt = "tekst til billed 2";
+            }
+        }
+        let skift = ["animals", "arch", "people", "nature", "tech"];
+
+        function skift() {
+            const nummer = Math.round(Math.random() * 4);
+            billede.src = "https://placeimg.com/600/400/" + kategorier[nummer];
+            billede.alt = kategorier(nummer);
+        }
+    </script>
+</body></html>
