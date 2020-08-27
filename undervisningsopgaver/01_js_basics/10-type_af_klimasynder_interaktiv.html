@@ -11,45 +11,26 @@
 <body>
 
     <p>Hvad er længden på dine flyrejse i timer?</p>
-    <input type="text" id="længde">
-    <button>Klik og beregn CO</button>
+    <input type="text" id="flyvetid">
+    <button>Klik og beregn CO2</button>
 
 
 
 
     <script>
-        document.querySelector("button").addEventListener("click", buttonCliked);
+        document.querySelector("button").addEventListener("click", buttonClicked);
 
-        function buttonCliked() {
+        function buttonClicked() {
+            let flyvetid = document.querySelector("#flyvetid").value;
+            let co2 = flyvetid * 109;
 
 
-            let c = 109;
-            var time = new Date().getHours();
-
-            function udslet {
-                return c * time;
-            }
-            let resultat = `Her er CO2-udledningen for længden af de timer du flyver ${resultat}`;
-            console.log(resultat);
-
-            if (time < 10) {
-                resultat = "Godmorgen";
-
-            } else if (time < 18) {
-                resultat = "Goddag";
-            } else if (time < 24) {
-                resultat = "Godaften";
-            } else if (time < 05) {
-                resultat = "Godnat";
+            if (isNaN(flyvetid) || flyvetid == 0) {
+                console.log("Angiv tiden i tal, Prøv igen")
+            } else {
+                console.log(`Der vil udledes ${co2} kg co2 på ${flyvetid} timer`)
             }
 
-            function længden(l, c) {
-                return l * c;
-
-            }
         }
-
     </script>
-</body>
-
-</html>
+</body></html>
