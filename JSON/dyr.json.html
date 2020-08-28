@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>JS Objekter</title>
+    <title>JSON</title>
     <style>
 
     </style>
@@ -59,20 +59,27 @@
         let temp = document.querySelector("template");
 
 
-        //løb igennem array "dyr"
-        dyr.forEach(etDyr => {
+        async function hentdata() {
+            const respons = await fetch("dyr.json")
+            const json = await respons.json();
+            vis(json);
 
-            let klon = temp.cloneNode(true).content;
-            klon.querySelector("h2").textContent = etDyr.navn;
-            klon.querySelector(".art").textContent = etDyr.type;
-            klon.querySelector(".sted").textContent = etDyr.levested;
-            klon.querySelector("img").src = etDyr.billede;
-            container.appendChild(klon);
+        }
+
+        function vis(json) {
+            json.forEach(etDyr => {
+                //løb igennem array "dyr"
+                let klon = temp.cloneNode(true).content;
+                klon.querySelector("h2").textContent = etDyr.navn;
+                klon.querySelector(".art").textContent = etDyr.type;
+                klon.querySelector(".sted").textContent = etDyr.levested;
+                klon.querySelector("img").src = etDyr.billede;
+                container.appendChild(klon);
 
 
-        })
+            })
+        }
 
+        hentdata();
     </script>
-</body>
-
-</html>
+</body></html>

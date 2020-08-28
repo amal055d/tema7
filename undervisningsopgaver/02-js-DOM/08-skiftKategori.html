@@ -65,27 +65,33 @@
 
 
     <script>
-        console.log("test");
+        let billede2;
+        let kategorier = ["animals", "arch", "people", "nature", "tech"];
+
         document.addEventListener("DOMContentLoaded", start);
 
+
         function start() {
-            console.log("alt er loaded");
+            console.log("sidenVises");
 
 
-            first.addEventListener("click", changePic);
+            Billede2 = document.querySelector("article:nth-child(2) img");
 
-            function changePic() {
-                const firstpic = document.querySelector("#first")
-                firstpic.src = "https://placeimg.com/400/300/arch?t=" + Math.round(Math.random() * 9) + 1;
-                firstpic.alt = "tekst til billed 2";
-            }
+            Billede2.addEventListener("click", skift);
+
+
+
         }
-        let skift = ["animals", "arch", "people", "nature", "tech"];
+
 
         function skift() {
             const nummer = Math.round(Math.random() * 4);
-            billede.src = "https://placeimg.com/600/400/" + kategorier[nummer];
-            billede.alt = kategorier(nummer);
+
+            billede2.src = "https://placeimg.com/600/400/" + kategorier[nummer];
+            billede2.alt = kategorier[nummer];
         }
+
+
+        /**** DET VIRKER IKKE :/ ****/
     </script>
 </body></html>
