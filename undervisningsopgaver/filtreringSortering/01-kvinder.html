@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persongalleri</title>
+    <link rel="stylesheet" href="">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+
+<style>
+    img {
+        width: 90%;
+    }
+
+    section {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: grid;
+        grid-gap: 8px;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+
+    }
+
+
+    h2 {
+
+        font-family: 'Bebas Neue', cursive;
+        font-size: 2rem;
+        color: #f07fc5
+    }
+
+    p {
+        font-family: 'Roboto', sans-serif;
+        color: #3e2107;
+        font-size: 1rem;
+    }
+
+
+    article {
+        width: 80%;
+        border: 2px solid #d197d3;
+        padding: 30px;
+        margin-bottom: 10px;
+
+
+    }
+
+</style>
+
+<body>
+    <section id="liste"></section>
+    <template>
+        <article>
+            <img src="" alt="">
+            <h3 class="navn"></h3>
+            <h2 class="efternavn"></h2>
+            <div class="info">
+                <p class="kon"></p>
+                <p class="by"></p>
+                <p class="land"></p>
+                <p class="job"></p>
+                <p class="hobby"></p>
+            </div>
+
+        </article>
+    </template>
+    <script>
+        const fil = "dyrIJSON.json";
+        const link = "https://spreadsheets.google.com/feeds/list/1mtHhpoEkYqVqr1TSnKQ1_sQZWI7FRVjcw3H1oatDOVQ/od6/public/values?alt=json";
+        let filter = "k";
+        let personer;
+
+        async function hentdata(fil) {
+            const resultat = await fetch(link);
+            const json = await resultat.json();
+            vis(json);
+
+            console.log(json);
+        }
+
+        function vis(personer) {
+            console.log(personer);
+
+
+            let container = document.querySelector("section");
+            let temp = document.querySelector("template");
+            //løb igennem array "dyr"
+            personer.feed.entry.forEach(person => {
+                if (filter == person.gsx$køn.$t.toLowerCase()) {
+
+                    let klon = temp.cloneNode(true).content;
+                    klon.querySelector(".navn").textContent = person.gsx$navn.$t;
+                    klon.querySelector(".efternavn").textContent = person.gsx$efternavn.$t;
+                    klon.querySelector(".by").textContent = person.gsx$by.$t;
+                    klon.querySelector(".land").textContent = person.gsx$land.$t;
+                    klon.querySelector(".hobby").textContent = person.gsx$hobby.$t;
+                    klon.querySelector(".job").textContent = person.gsx$job.$t;
+                    klon.querySelector("img").src = person.gsx$billede.$t
+                    container.appendChild(klon);
+                }
+            })
+        }
+
+
+
+        hentdata(fil);
+
+    </script>
+</body>
+
+</html>
