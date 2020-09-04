@@ -324,8 +324,8 @@
         function filtrering() {
             filter = this.dataset.kategori;
             document.querySelector("h1").textContent = this.textContent;
-            document.querySelectorAll(".filter").forEach(elm => {
-                elm.classList.remove("valgt");
+            document.querySelectorAll(".filter").forEach(btn => {
+                btn.classList.remove("valgt");
             })
             this.classList.add("valgt");
             visJson();
